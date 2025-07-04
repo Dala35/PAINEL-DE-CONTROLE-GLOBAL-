@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Comando Global – DALA CURE OS</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f4f8;
+    }
+    header {
+      background-color: #003d4d;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    #map {
+      height: 80vh;
+      width: 100%;
+    }
+    #sidebar {
+      padding: 1rem;
+      background: #fff;
+    }
+    .project-info {
+      background: #fefefe;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-left: 5px solid #00a36c;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 10px;
+      background: #003d4d;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      #main {
+        display: flex;
+      }
+      #sidebar {
+        width: 30%;
+      }
+      #map {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌍 Painel de Comando Global – DALA CURE OS</h1>
+  <p>Inovação em Saúde, Cultura, Inclusão e Desenvolvimento Sustentável</p>
+</header>
+
+<div id="main">
+  <div id="sidebar">
+    <h2>📌 Projectos Globais</h2>
+    <div class="project-info" style="border-left-color: #00cc44;">
+      <h3>🧠 TECLA – Neurodiversidade</h3>
+      <p>Intervenção no autismo e desenvolvimento de comunicação adaptada.</p>
+      <small>Status: Ativo em Angola (Bié)</small>
+    </div>
+    <div class="project-info" style="border-left-color: #ff6600;">
+      <h3>💧 BioFiltro – Água Segura</h3>
+      <p>Soluções ecológicas para purificação comunitária da água.</p>
+      <small>Status: Em expansão rural</small>
+    </div>
+    <div class="project-info" style="border-left-color: #cc0000;">
+      <h3>💊 Malária 0 – Protocolo Popular</h3>
+      <p>Formulações locais e vigilância preventiva comunitária.</p>
+      <small>Status: Piloto em validação</small>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<footer>
+  Criado por Dala De Carvalho ✊🏽 – Julho 2025 | DALA CURE OS
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([-11.2, 17.8], 6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+
+  const projetos = [
+    {
+      nome: "TECLA – Neurodiversidade",
+      coords: [-12.57, 17.61],
+      descricao: "Intervenção no autismo e desenvolvimento de comunicação adaptada.",
+      status: "Ativo em Angola (Bié)",
+      cor: "#00cc44",
+      emoji: "🧠"
+    },
+    {
+      nome: "BioFiltro – Água Segura",
+      coords: [-11.78, 15.26],
+      descricao: "Soluções ecológicas para purificação comunitária da água.",
+      status: "Em expansão rural",
+      cor: "#ff6600",
+      emoji: "💧"
+    },
+    {
+      nome: "Malária 0 – Protocolo Popular",
+      coords: [-8.83, 13.24],
+      descricao: "Formulações locais e vigilância preventiva comunitária.",
+      status: "Piloto em validação",
+      cor: "#cc0000",
+      emoji: "💊"
+    }
+  ];
+
+  projetos.forEach(p => {
+    const marker = L.circleMarker(p.coords, {
+      radius: 10,
+      color: p.cor,
+      fillColor: p.cor,
+      fillOpacity: 0.8
+    }).addTo(map);
+
+    marker.bindPopup(`<strong>${p.emoji} ${p.nome}</strong><br>${p.descricao}<br><em>Status: ${p.status}</em>`);
+  });
+</script>
+
+</body>
+</html>

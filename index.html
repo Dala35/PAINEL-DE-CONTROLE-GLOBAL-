@@ -3,80 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Painel de Comando Global – DALA CURE OS</title>
+  <title>🌍 Painel de Controle Global – DALA CURE OS</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f0f4f8;
+      font-family: 'Arial', sans-serif;
+      background: #eef3f7;
     }
     header {
-      background-color: #003d4d;
+      background: linear-gradient(to right, #002244, #005792);
       color: white;
-      padding: 1rem;
+      padding: 1.5rem;
       text-align: center;
     }
-    #map {
-      height: 80vh;
-      width: 100%;
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    #main {
+      display: flex;
+      flex-direction: column;
+    }
+    @media(min-width: 768px) {
+      #main {
+        flex-direction: row;
+      }
     }
     #sidebar {
+      background: #ffffff;
       padding: 1rem;
-      background: #fff;
+      width: 100%;
+    }
+    @media(min-width: 768px) {
+      #sidebar {
+        width: 30%;
+        height: 88vh;
+        overflow-y: auto;
+      }
+    }
+    #map {
+      height: 60vh;
+      width: 100%;
+    }
+    @media(min-width: 768px) {
+      #map {
+        height: 88vh;
+        width: 70%;
+      }
     }
     .project-info {
-      background: #fefefe;
+      background: #f4f8fc;
       padding: 1rem;
       border-radius: 10px;
-      margin-bottom: 10px;
-      border-left: 5px solid #00a36c;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+      border-left: 5px solid #005792;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .project-info h3 {
+      margin: 0 0 5px 0;
+    }
+    .project-info small {
+      color: #555;
+      font-size: 0.85em;
     }
     footer {
       text-align: center;
-      font-size: 12px;
+      font-size: 13px;
       padding: 10px;
-      background: #003d4d;
+      background: #002244;
       color: white;
     }
-    @media (min-width: 768px) {
-      #main {
-        display: flex;
-      }
-      #sidebar {
-        width: 30%;
-      }
-      #map {
-        width: 70%;
-      }
+    .vibrational-block {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #e2f0fb;
+      border-radius: 8px;
+    }
+    .vibrational-block h4 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🌍 Painel de Comando Global – DALA CURE OS</h1>
-  <p>Inovação em Saúde, Cultura, Inclusão e Desenvolvimento Sustentável</p>
+  <h1>🌐 Painel de Controle Global – DALA CURE OS</h1>
+  <p>Monitoramento vibracional de projetos com impacto real | 🌍 Saúde | Cultura | Educação | Inovação</p>
 </header>
 
 <div id="main">
   <div id="sidebar">
-    <h2>📌 Projectos Globais</h2>
-    <div class="project-info" style="border-left-color: #00cc44;">
-      <h3>🧠 TECLA – Neurodiversidade</h3>
-      <p>Intervenção no autismo e desenvolvimento de comunicação adaptada.</p>
-      <small>Status: Ativo em Angola (Bié)</small>
+    <h2>📌 Projectos Ativos</h2>
+
+    <div class="project-info">
+      <h3>🎓 Cako Ceto – Luanda</h3>
+      <p>Formação em cultura, cidadania e tecnologia para jovens.</p>
+      <small>🟢 Status: Em formação</small>
     </div>
-    <div class="project-info" style="border-left-color: #ff6600;">
-      <h3>💧 BioFiltro – Água Segura</h3>
-      <p>Soluções ecológicas para purificação comunitária da água.</p>
-      <small>Status: Em expansão rural</small>
+
+    <div class="project-info">
+      <h3>🧠 TECLA – Bié</h3>
+      <p>Comunicação neurodiversa para crianças autistas sensíveis.</p>
+      <small>🟠 Status: Piloto</small>
     </div>
-    <div class="project-info" style="border-left-color: #cc0000;">
-      <h3>💊 Malária 0 – Protocolo Popular</h3>
-      <p>Formulações locais e vigilância preventiva comunitária.</p>
-      <small>Status: Piloto em validação</small>
+
+    <div class="project-info">
+      <h3>💉 VacTrack – Huambo</h3>
+      <p>Planeamento de campanhas de vacinação com IA e simulação.</p>
+      <small>🔵 Status: Em execução</small>
+    </div>
+
+    <div class="vibrational-block">
+      <h4>🌈 Radar Vibracional Global</h4>
+      <ul style="padding-left: 20px;">
+        <li>🌍 África – Regeneração em curso 🔥</li>
+        <li>🌎 América Latina – Inovação ascendente 🌱</li>
+        <li>🌏 Ásia – Expansão tecnológica ⚙️</li>
+        <li>🌐 Europa – Estrutura estável 🧩</li>
+      </ul>
     </div>
   </div>
 
@@ -84,7 +129,7 @@
 </div>
 
 <footer>
-  Criado por Dala De Carvalho ✊🏽 – Julho 2025 | DALA CURE OS
+  Criado por Dala De Carvalho ✊🏽 – DALA CURE OS © 2025
 </footer>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -92,45 +137,34 @@
   const map = L.map('map').setView([-11.2, 17.8], 6);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
+    attribution: '&copy; OpenStreetMap',
   }).addTo(map);
 
   const projetos = [
     {
-      nome: "TECLA – Neurodiversidade",
-      coords: [-12.57, 17.61],
-      descricao: "Intervenção no autismo e desenvolvimento de comunicação adaptada.",
-      status: "Ativo em Angola (Bié)",
-      cor: "#00cc44",
-      emoji: "🧠"
+      nome: "🎓 Cako Ceto – Luanda",
+      coords: [-8.8383, 13.2344],
+      descricao: "Formação em cultura, cidadania e tecnologia para jovens.",
+      status: "🟢 Em formação"
     },
     {
-      nome: "BioFiltro – Água Segura",
-      coords: [-11.78, 15.26],
-      descricao: "Soluções ecológicas para purificação comunitária da água.",
-      status: "Em expansão rural",
-      cor: "#ff6600",
-      emoji: "💧"
+      nome: "🧠 TECLA – Bié",
+      coords: [-12.5763, 17.6085],
+      descricao: "Comunicação neurodiversa para crianças autistas sensíveis.",
+      status: "🟠 Piloto"
     },
     {
-      nome: "Malária 0 – Protocolo Popular",
-      coords: [-8.83, 13.24],
-      descricao: "Formulações locais e vigilância preventiva comunitária.",
-      status: "Piloto em validação",
-      cor: "#cc0000",
-      emoji: "💊"
+      nome: "💉 VacTrack – Huambo",
+      coords: [-12.7761, 15.7395],
+      descricao: "Planeamento de campanhas de vacinação com IA e simulação.",
+      status: "🔵 Em execução"
     }
   ];
 
   projetos.forEach(p => {
-    const marker = L.circleMarker(p.coords, {
-      radius: 10,
-      color: p.cor,
-      fillColor: p.cor,
-      fillOpacity: 0.8
-    }).addTo(map);
-
-    marker.bindPopup(`<strong>${p.emoji} ${p.nome}</strong><br>${p.descricao}<br><em>Status: ${p.status}</em>`);
+    L.marker(p.coords)
+      .addTo(map)
+      .bindPopup(`<strong>${p.nome}</strong><br>${p.descricao}<br><em>Status: ${p.status}</em>`);
   });
 </script>
 
